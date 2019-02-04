@@ -130,12 +130,12 @@ EOF" if build_desc["sudo"] and @options[:allow_sudo]
     script.puts "export LANG='en_US.UTF-8'"
     script.puts "export LC_ALL='en_US.UTF-8'"
     script.puts "umask 002"
-    script.puts "export OUTDIR=/home/okg/gitian-builder/out"
+    script.puts "export OUTDIR=/home/omur/out"
     script.puts "GBUILD_BITS=#{bits}"
     if build_desc["enable_cache"]
       script.puts "GBUILD_CACHE_ENABLED=1"
-      script.puts "GBUILD_PACKAGE_CACHE=/home/okg/gitian-builder/cache/#{build_desc["name"]}"
-      script.puts "GBUILD_COMMON_CACHE=/home/okg/gitian-builder/cache/common"
+      script.puts "GBUILD_PACKAGE_CACHE=/home/omur/cache/#{build_desc["name"]}"
+      script.puts "GBUILD_COMMON_CACHE=/home/omur/cache/common"
     end
     script.puts "MAKEOPTS=(-j#{@options[:num_procs]})"
     script.puts
